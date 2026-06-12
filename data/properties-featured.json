@@ -29,7 +29,37 @@
     "mapUrl": "https://maps.google.com/?q=The+Ritz-Carlton+Residences+Kuala+Lumpur+KLCC",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-08 14:22:12"
+    "createdAt": "2026-05-08 14:22:12",
+    "descEn": "A luxury residence under the iconic Ritz-Carlton brand with panoramic views of the Petronas Twin Towers. This high-floor unit offers a 270-degree city skyline view, complete luxury furnishings and attentive residence-style service.",
+    "descMs": "Kediaman mewah di bawah jenama ikonik Ritz-Carlton dengan panorama Menara Berkembar Petronas. Unit tingkat tinggi ini menawarkan pemandangan latar langit bandar 270 darjah, perabot mewah lengkap dan layanan gaya residensi yang prihatin.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Free parking",
+      "Air conditioning",
+      "Fully equipped kitchen",
+      "Smart TV",
+      "24-hour security"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "Parkir percuma",
+      "Penyaman udara",
+      "Dapur lengkap",
+      "TV pintar",
+      "Keselamatan 24 jam"
+    ],
+    "highlightsEn": [
+      "Twin Towers view",
+      "Breakfast option",
+      "Airport transfer",
+      "Guest-only gym & pool"
+    ],
+    "highlightsMs": [
+      "Pemandangan Menara Berkembar",
+      "Pilihan sarapan",
+      "Pemindahan lapangan terbang",
+      "Gim & kolam khas untuk tetamu"
+    ]
   },
   {
     "id": 2,
@@ -61,7 +91,37 @@
     "mapUrl": "https://maps.google.com/?q=Banyan+Tree+Residences+Kuala+Lumpur+Bukit+Bintang",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-08 14:22:12"
+    "createdAt": "2026-05-08 14:22:12",
+    "descEn": "A Banyan Tree branded luxury serviced apartment in the heart of Bukit Bintang. Next to Pavilion Kuala Lumpur and within walking distance of premium dining and shopping, this spacious three-bedroom home is ideal for families or business groups.",
+    "descMs": "Apartmen servis mewah berjenama Banyan Tree di lokasi utama Bukit Bintang. Bersebelahan Pavilion Kuala Lumpur dan dekat dengan restoran serta pusat beli-belah premium, kediaman tiga bilik yang luas ini sesuai untuk keluarga atau kumpulan perniagaan.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Valet parking",
+      "Air conditioning",
+      "Fully equipped kitchen",
+      "Netflix",
+      "24-hour concierge"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "Parkir valet",
+      "Penyaman udara",
+      "Dapur lengkap",
+      "Netflix",
+      "Konsierj 24 jam"
+    ],
+    "highlightsEn": [
+      "Walk to shopping malls",
+      "Three-bedroom suite",
+      "Dedicated butler service",
+      "Infinity pool"
+    ],
+    "highlightsMs": [
+      "Berjalan kaki ke pusat beli-belah",
+      "Suite tiga bilik",
+      "Khidmat butler khusus",
+      "Kolam infiniti"
+    ]
   },
   {
     "id": 3,
@@ -93,7 +153,37 @@
     "mapUrl": "https://maps.google.com/?q=Four+Seasons+Place+KLCC+Kuala+Lumpur",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-08 14:22:12"
+    "createdAt": "2026-05-08 14:22:12",
+    "descEn": "A top-tier serviced apartment under Four Seasons, offering hotel-level facilities and service. The high-floor unit has close Twin Towers views, imported marble finishes and refined detailing throughout.",
+    "descMs": "Apartmen servis premium di bawah Four Seasons dengan kemudahan dan perkhidmatan setaraf hotel. Unit tingkat tinggi ini menawarkan pemandangan dekat Menara Berkembar, kemasan marmar import dan perincian yang elegan di seluruh ruang.",
+    "amenitiesEn": [
+      "Ultra-fast WiFi",
+      "Free parking",
+      "Air conditioning",
+      "Premium kitchen appliances",
+      "Bang & Olufsen audio",
+      "24-hour concierge"
+    ],
+    "amenitiesMs": [
+      "WiFi ultra laju",
+      "Parkir percuma",
+      "Penyaman udara",
+      "Peralatan dapur premium",
+      "Audio Bang & Olufsen",
+      "Konsierj 24 jam"
+    ],
+    "highlightsEn": [
+      "Close Twin Towers view",
+      "Hotel-style service",
+      "Private library",
+      "Sky pool & spa"
+    ],
+    "highlightsMs": [
+      "Pemandangan dekat Menara Berkembar",
+      "Perkhidmatan gaya hotel",
+      "Perpustakaan peribadi",
+      "Kolam langit & spa"
+    ]
   },
   {
     "id": 4,
@@ -125,7 +215,37 @@
     "mapUrl": "https://maps.google.com/?q=Pavilion+Suites+Bukit+Bintang+Kuala+Lumpur",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-08 14:22:12"
+    "createdAt": "2026-05-08 14:22:12",
+    "descEn": "A luxury suite directly connected to Pavilion Kuala Lumpur, giving you effortless access to shopping, dining and entertainment. The design blends modern simplicity with Malaysian-inspired details, ideal for guests who love city convenience.",
+    "descMs": "Suite mewah yang bersambung terus ke Pavilion Kuala Lumpur, memudahkan akses kepada beli-belah, makanan dan hiburan. Reka bentuknya menggabungkan kesederhanaan moden dengan sentuhan Malaysia, sesuai untuk tetamu yang mahukan kemudahan bandar.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Parking",
+      "Air conditioning",
+      "Fully equipped kitchen",
+      "Smart home features",
+      "24-hour security"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "Parkir",
+      "Penyaman udara",
+      "Dapur lengkap",
+      "Ciri rumah pintar",
+      "Keselamatan 24 jam"
+    ],
+    "highlightsEn": [
+      "Direct Pavilion link",
+      "Prime shopping location",
+      "Two-bedroom suite",
+      "Private balcony with city view"
+    ],
+    "highlightsMs": [
+      "Sambungan terus ke Pavilion",
+      "Lokasi beli-belah utama",
+      "Suite dua bilik",
+      "Balkoni peribadi dengan pemandangan bandar"
+    ]
   },
   {
     "id": 5,
@@ -157,7 +277,37 @@
     "mapUrl": "https://maps.google.com/?q=Ascott+Sentral+KL+Sentral+Kuala+Lumpur",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-08 14:22:12"
+    "createdAt": "2026-05-08 14:22:12",
+    "descEn": "A boutique Ascott serviced residence next to the KL Sentral transport hub, with MRT and airport rail links close by. A practical, well-serviced choice for business travellers and short stays.",
+    "descMs": "Residensi servis butik Ascott bersebelahan hab pengangkutan KL Sentral, dekat dengan MRT dan tren lapangan terbang. Pilihan praktikal dan selesa untuk pengembara perniagaan serta penginapan singkat.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Free parking",
+      "Air conditioning",
+      "Kitchenette",
+      "Smart TV",
+      "Washer"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "Parkir percuma",
+      "Penyaman udara",
+      "Dapur kecil",
+      "TV pintar",
+      "Mesin basuh"
+    ],
+    "highlightsEn": [
+      "Direct KL Sentral access",
+      "28 minutes to the airport by rail",
+      "Business centre",
+      "Rooftop pool"
+    ],
+    "highlightsMs": [
+      "Akses terus ke KL Sentral",
+      "28 minit ke lapangan terbang dengan tren",
+      "Pusat perniagaan",
+      "Kolam renang atas bumbung"
+    ]
   },
   {
     "id": 6,
@@ -189,7 +339,37 @@
     "mapUrl": "https://maps.google.com/?q=St+Regis+Residences+KL+Sentral+Kuala+Lumpur",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-08 14:22:12"
+    "createdAt": "2026-05-08 14:22:12",
+    "descEn": "A flagship St. Regis residence and one of Kuala Lumpur's most prestigious serviced homes. The three-bedroom suite includes butler-style service and private dining support for guests seeking an elevated stay.",
+    "descMs": "Residensi unggul St. Regis dan antara kediaman servis paling berprestij di Kuala Lumpur. Suite tiga bilik ini menyediakan layanan gaya butler serta sokongan makan peribadi untuk tetamu yang mahukan pengalaman istimewa.",
+    "amenitiesEn": [
+      "Ultra-fast WiFi",
+      "Valet parking",
+      "Central air conditioning",
+      "Premium kitchen suite",
+      "Private cinema",
+      "24-hour butler"
+    ],
+    "amenitiesMs": [
+      "WiFi ultra laju",
+      "Parkir valet",
+      "Penyaman udara berpusat",
+      "Set dapur premium",
+      "Pawagam peribadi",
+      "Butler 24 jam"
+    ],
+    "highlightsEn": [
+      "St. Regis butler service",
+      "24/7 private butler",
+      "Premium spa access",
+      "Panoramic infinity pool"
+    ],
+    "highlightsMs": [
+      "Khidmat butler St. Regis",
+      "Butler peribadi 24/7",
+      "Akses spa premium",
+      "Kolam infiniti panorama"
+    ]
   },
   {
     "id": 10,
@@ -223,7 +403,41 @@
     "mapUrl": "https://maps.google.com/?q=Skyline+KL+by+Home+Empire+Group",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-15 06:27:58"
+    "createdAt": "2026-05-15 06:27:58",
+    "descEn": "Set in the heart of Kuala Lumpur with a captivating city skyline at night. This thoughtfully designed 1+1 suite pairs warm wood tones with LED lighting and Japanese minimalist furniture. Floor-to-ceiling windows frame the Twin Towers silhouette, and a welcome basket makes the stay feel considered from the first step in.",
+    "descMs": "Terletak di tengah Kuala Lumpur dengan pemandangan latar langit bandar yang memukau pada waktu malam. Suite 1+1 ini menggabungkan tona kayu hangat, pencahayaan LED dan perabot minimalis Jepun. Tingkap tinggi membingkai siluet Menara Berkembar, manakala bakul alu-aluan menjadikan ketibaan lebih istimewa.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Smart TV",
+      "Air conditioning",
+      "Kitchenette",
+      "Parking",
+      "24-hour security"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "TV pintar",
+      "Penyaman udara",
+      "Dapur kecil",
+      "Parkir",
+      "Keselamatan 24 jam"
+    ],
+    "highlightsEn": [
+      "Twin Towers skyline view",
+      "Japanese minimalist design",
+      "LED ambient lighting",
+      "Welcome basket included",
+      "3-minute walk to KLCC Park",
+      "Private study / work area"
+    ],
+    "highlightsMs": [
+      "Pemandangan latar Menara Berkembar",
+      "Reka bentuk minimalis Jepun",
+      "Pencahayaan LED suasana",
+      "Bakul alu-aluan disediakan",
+      "3 minit berjalan kaki ke KLCC Park",
+      "Ruang belajar / kerja peribadi"
+    ]
   },
   {
     "id": 11,
@@ -257,7 +471,41 @@
     "mapUrl": "https://maps.google.com/?q=Sunway+Belfield+Jalan+Belfield+Kuala+Lumpur",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-15 06:28:27"
+    "createdAt": "2026-05-15 06:28:27",
+    "descEn": "A bright and spacious 2+1 suite with a Nordic-Japanese design mix. A large storage wall with LED display shelves, an open kitchen with bar seating, two private bedrooms and a flexible study make it ideal for families or groups of friends.",
+    "descMs": "Suite 2+1 yang terang dan luas dengan gabungan reka bentuk Nordic-Jepun. Dinding storan besar dengan rak paparan LED, dapur terbuka bersama tempat duduk bar, dua bilik tidur berasingan dan bilik belajar fleksibel menjadikannya sesuai untuk keluarga atau kumpulan rakan.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Smart TV",
+      "Air conditioning",
+      "Fully equipped kitchen",
+      "Parking bay",
+      "24-hour security"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "TV pintar",
+      "Penyaman udara",
+      "Dapur lengkap",
+      "Petak parkir",
+      "Keselamatan 24 jam"
+    ],
+    "highlightsEn": [
+      "2 bedrooms + study layout",
+      "Nordic-Japanese design",
+      "Large LED display storage wall",
+      "Open kitchen with bar counter",
+      "LED smart mirror bathroom",
+      "Walkable to Sunway commercial area"
+    ],
+    "highlightsMs": [
+      "Susun atur 2 bilik + bilik belajar",
+      "Reka bentuk Nordic-Jepun",
+      "Dinding storan besar dengan paparan LED",
+      "Dapur terbuka dengan kaunter bar",
+      "Bilik mandi dengan cermin pintar LED",
+      "Berjalan kaki ke kawasan komersial Sunway"
+    ]
   },
   {
     "id": 12,
@@ -291,7 +539,41 @@
     "mapUrl": "https://maps.google.com/maps/search/?api=1&query=Yolo+Signature+Suites+Sunway+Mentari",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-15 06:29:26"
+    "createdAt": "2026-05-15 06:29:26",
+    "descEn": "A spacious 3+1 suite with warm Japanese styling throughout. The master bedroom features carefully prepared bedding and welcome styling, while the kitchen includes a refrigerator and microwave. A six-seat dining area and a small study room make it suitable for families or business groups.",
+    "descMs": "Suite 3+1 yang luas dengan gaya Jepun hangat di setiap ruang. Bilik utama dilengkapi cadar yang rapi dan hiasan alu-aluan, manakala dapur mempunyai peti sejuk dan ketuhar gelombang mikro. Ruang makan enam tempat duduk serta bilik belajar kecil sesuai untuk keluarga atau kumpulan perniagaan.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Smart TV",
+      "Air conditioning",
+      "Fully equipped kitchen",
+      "Parking bay",
+      "24-hour security"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "TV pintar",
+      "Penyaman udara",
+      "Dapur lengkap",
+      "Petak parkir",
+      "Keselamatan 24 jam"
+    ],
+    "highlightsEn": [
+      "3 bedrooms + study layout",
+      "Warm Japanese design",
+      "Welcome styling included",
+      "Dining for six",
+      "Fourth room as private study",
+      "Air conditioning in every room"
+    ],
+    "highlightsMs": [
+      "Susun atur 3 bilik + bilik belajar",
+      "Reka bentuk Jepun hangat",
+      "Hiasan alu-aluan disediakan",
+      "Ruang makan untuk enam orang",
+      "Bilik keempat sebagai ruang belajar",
+      "Penyaman udara di setiap bilik"
+    ]
   },
   {
     "id": 13,
@@ -325,7 +607,41 @@
     "mapUrl": "https://maps.google.com/maps/search/?api=1&query=Yolo+Signature+Suites+Sunway+Mentari",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-15 06:29:48"
+    "createdAt": "2026-05-15 06:29:48",
+    "descEn": "A refined 2+1 suite in warm beige Japanese wabi-sabi style. LED lines define the living room, terracotta curtains soften the wood furniture, and natural light gives the space a calm glow. The master bedroom includes a large built-in wood wardrobe and a plant-lined desk with city greenery outside.",
+    "descMs": "Suite 2+1 yang elegan dalam gaya wabi-sabi Jepun bernuansa beige hangat. Garisan LED menyerlahkan ruang tamu, langsir terakota melembutkan perabot kayu, dan cahaya semula jadi memberi suasana tenang. Bilik utama mempunyai almari kayu terbina dalam serta meja kerja berhias tanaman dengan kehijauan bandar di luar tingkap.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Smart TV",
+      "Air conditioning",
+      "Fully equipped kitchen",
+      "Parking bay",
+      "24-hour security"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "TV pintar",
+      "Penyaman udara",
+      "Dapur lengkap",
+      "Petak parkir",
+      "Keselamatan 24 jam"
+    ],
+    "highlightsEn": [
+      "Warm Japanese wabi-sabi design",
+      "LED living room ambience",
+      "City greenery from master bedroom",
+      "Welcome styling included",
+      "Built-in wood wardrobe",
+      "Private study work area"
+    ],
+    "highlightsMs": [
+      "Reka bentuk wabi-sabi Jepun hangat",
+      "Suasana LED di ruang tamu",
+      "Kehijauan bandar dari bilik utama",
+      "Hiasan alu-aluan disediakan",
+      "Almari kayu terbina dalam",
+      "Ruang kerja peribadi"
+    ]
   },
   {
     "id": 14,
@@ -360,6 +676,42 @@
     "mapUrl": "https://maps.google.com/?q=Skyline+KL+by+Home+Empire+Group",
     "available": true,
     "featured": true,
-    "createdAt": "2026-05-15 06:31:47"
+    "createdAt": "2026-05-15 06:31:47",
+    "descEn": "A dramatic city-stay suite facing the Merdeka 118 skyline. Cream, oatmeal and natural wood tones create a quiet sense of luxury, with a curved velvet sofa, organic coffee table, triptych artwork and timber pendant lighting. The master bedroom features a deep green velvet bed, while the LED kitchen, Hisense fridge, washer and Japanese-inspired bathroom complete a polished urban holiday experience.",
+    "descMs": "Suite percutian bandar yang menghadap latar Merdeka 118. Tona krim, oat dan kayu semula jadi membina rasa mewah yang tenang, lengkap dengan sofa baldu melengkung, meja kopi organik, karya seni tiga panel dan lampu gantung kayu. Bilik utama menampilkan katil baldu hijau gelap, manakala dapur LED, peti sejuk Hisense, mesin basuh dan bilik mandi berinspirasi Jepun melengkapkan pengalaman kota yang kemas.",
+    "amenitiesEn": [
+      "High-speed WiFi",
+      "Smart TV",
+      "Air conditioning",
+      "Fully equipped kitchen",
+      "Washer",
+      "Parking",
+      "24-hour security"
+    ],
+    "amenitiesMs": [
+      "WiFi berkelajuan tinggi",
+      "TV pintar",
+      "Penyaman udara",
+      "Dapur lengkap",
+      "Mesin basuh",
+      "Parkir",
+      "Keselamatan 24 jam"
+    ],
+    "highlightsEn": [
+      "Unblocked Merdeka 118 view",
+      "Cream curved sofa + organic coffee table",
+      "LED-fitted kitchen",
+      "Japanese onsen-style bathroom",
+      "Deep green velvet bed with welcome styling",
+      "Home Empire branded welcome screen"
+    ],
+    "highlightsMs": [
+      "Pemandangan Merdeka 118 tanpa halangan",
+      "Sofa krim melengkung + meja kopi organik",
+      "Dapur lengkap pencahayaan LED",
+      "Bilik mandi gaya onsen Jepun",
+      "Katil baldu hijau gelap dengan hiasan alu-aluan",
+      "Skrin alu-aluan berjenama Home Empire"
+    ]
   }
 ]
