@@ -34,6 +34,16 @@
       '<div class="he-loader-track"><i></i></div>'
     ].join("");
     loader.appendChild(frame);
+
+    var removeLoader = function () {
+      if (!loader || !loader.parentNode) return;
+      loader.classList.add("he-loader-done");
+      window.setTimeout(function () {
+        if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 420);
+    };
+    window.setTimeout(removeLoader, document.querySelector("main") ? 1400 : 2600);
+    window.setTimeout(removeLoader, 3600);
   }
 
   function addHomeVideo() {

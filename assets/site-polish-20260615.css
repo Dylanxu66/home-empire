@@ -12,6 +12,12 @@
     linear-gradient(115deg, rgba(8, 57, 47, .94) 0 50%, rgba(247, 242, 232, .98) 50% 100%),
     #08392f !important;
   overflow: hidden;
+  transition: opacity .42s ease, visibility .42s ease;
+}
+
+#he-page-loader.he-loader-redesign.he-loader-done {
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 #he-page-loader.he-loader-redesign::before,
