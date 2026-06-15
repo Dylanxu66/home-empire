@@ -48,9 +48,10 @@
     if (!main) return false;
     document.body.classList.add("he-renovation-page", "he-renovation-redesign");
 
-    var featureImages = [1, 2, 3, 4, 5, 6, 7, 8];
-    var allImages = [];
-    for (var i = 1; i <= totalImages; i += 1) allImages.push(i);
+    var sliderImages = [];
+    var galleryImages = [];
+    for (var i = 4; i <= 16; i += 1) sliderImages.push(i);
+    for (var j = 17; j <= totalImages; j += 1) galleryImages.push(j);
 
     main.innerHTML = [
       '<section class="he-reno-hero">',
@@ -63,13 +64,13 @@
       '    <span>' + t("intro") + '</span>',
       '  </div>',
       '</section>',
-      '<section class="he-reno-feature">',
+      '<section class="he-reno-slider">',
       '  <div class="he-reno-section-head">',
       '    <p>' + t("feature") + '</p>',
       '    <h2>' + t("note") + '</h2>',
       '  </div>',
-      '  <div class="he-reno-feature__grid">',
-      featureImages.map(function (index) { return image(index, "he-reno-feature__item"); }).join(""),
+      '  <div class="he-reno-slider__rail" aria-label="' + t("feature") + '">',
+      sliderImages.map(function (index) { return image(index, "he-reno-slider__item"); }).join(""),
       '  </div>',
       '</section>',
       '<section class="he-reno-gallery">',
@@ -77,7 +78,7 @@
       '    <p>' + t("gallery") + '</p>',
       '  </div>',
       '  <div class="he-reno-gallery__grid">',
-      allImages.map(function (index) { return image(index, "he-reno-gallery__item"); }).join(""),
+      galleryImages.map(function (index) { return image(index, "he-reno-gallery__item"); }).join(""),
       '  </div>',
       '</section>'
     ].join("");
