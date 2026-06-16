@@ -127,29 +127,37 @@
 
   function addHomeVideo() {
     if (!isHomePage()) return;
-    document.body.classList.add("he-home-video-panel-ready");
     var main = mainNode();
-    if (!main || document.querySelector("#he-home-video-panel")) return;
+    if (!main) return;
+    document.body.classList.add("he-home-stats-video-ready");
+    var oldPanel = document.querySelector("#he-home-video-panel");
+    if (oldPanel) oldPanel.remove();
     var oldBackground = document.querySelector("#he-home-video-bg");
     if (oldBackground) oldBackground.remove();
-    var hero = main.querySelector("section");
-    if (!hero) return;
+    if (document.querySelector("#he-home-stats-video-bg")) return;
+    var statsSection = Array.prototype.slice.call(main.querySelectorAll("section")).find(function (section, index) {
+      var text = (section.innerText || "").replace(/\s+/g, " ");
+      if (index === 0) return false;
+      var matchedLabels = [
+        /管理房源|Managed|Diurus/i,
+        /满意住客|Guests|Tetamu/i,
+        /平均评分|Rating|Penilaian/i
+      ].filter(function (pattern) {
+        return pattern.test(text);
+      }).length;
+      return text.indexOf("24/7") >= 0 && matchedLabels >= 2;
+    });
+    if (!statsSection) return;
+    statsSection.classList.add("he-home-stats-video-section");
     var wrap = document.createElement("div");
-    wrap.id = "he-home-video-panel";
+    wrap.id = "he-home-stats-video-bg";
+    wrap.setAttribute("aria-hidden", "true");
     wrap.innerHTML = [
-      '<video muted autoplay loop playsinline preload="metadata" poster="/images/hero-slide-1.png">',
-      '  <source src="https://videos.pexels.com/video-files/7578552/7578552-sd_960_540_30fps.mp4" type="video/mp4">',
+      '<video muted autoplay loop playsinline preload="metadata" poster="/images/hero-kl.png">',
+      '  <source src="https://assets.mixkit.co/videos/20137/20137-720.mp4" type="video/mp4">',
       '</video>'
     ].join("");
-    var h1 = hero.querySelector("h1");
-    var anchor = h1;
-    var next = h1 && h1.nextElementSibling;
-    while (next && !/form|button/i.test(next.tagName) && (next.innerText || "").length < 260) {
-      anchor = next;
-      next = next.nextElementSibling;
-    }
-    if (anchor) anchor.insertAdjacentElement("afterend", wrap);
-    else hero.appendChild(wrap);
+    statsSection.insertBefore(wrap, statsSection.firstChild);
   }
 
   function removeNode(node) {

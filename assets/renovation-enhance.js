@@ -1,8 +1,13 @@
 (function () {
   if (!/\/renovation\/?$/.test(window.location.pathname)) return;
 
-  var totalImages = 68;
   var imageBase = "/images/renovation-design/project-";
+  var displayImages = [
+    1, 2, 3, 4, 5, 7, 9, 11, 13, 14, 15, 16, 17, 18, 20, 21, 22, 24,
+    25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+    41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56,
+    57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67
+  ];
   var lang = "zh";
   var copy = {
     zh: {
@@ -47,17 +52,17 @@
     var main = document.querySelector("#root main") || document.querySelector("main");
     if (!main) return false;
     document.body.classList.add("he-renovation-page", "he-renovation-redesign");
+    document.documentElement.classList.remove("he-reno-boot");
 
-    var sliderImages = [];
-    var galleryImages = [];
-    for (var i = 4; i <= 16; i += 1) sliderImages.push(i);
-    for (var j = 17; j <= totalImages; j += 1) galleryImages.push(j);
+    var heroImages = displayImages.slice(0, 3);
+    var sliderImages = displayImages.slice(3, 16);
+    var galleryImages = displayImages.slice(16);
 
     main.innerHTML = [
       '<section class="he-reno-hero">',
-      '  <div class="he-reno-hero__image he-reno-hero__image--main"><img src="' + src(1) + '" alt="Home Empire renovation design"></div>',
-      '  <div class="he-reno-hero__image he-reno-hero__image--top"><img src="' + src(2) + '" alt="Home Empire renovation design"></div>',
-      '  <div class="he-reno-hero__image he-reno-hero__image--bottom"><img src="' + src(3) + '" alt="Home Empire renovation design"></div>',
+      '  <div class="he-reno-hero__image he-reno-hero__image--main"><img src="' + src(heroImages[0]) + '" alt="Home Empire renovation design"></div>',
+      '  <div class="he-reno-hero__image he-reno-hero__image--top"><img src="' + src(heroImages[1]) + '" alt="Home Empire renovation design"></div>',
+      '  <div class="he-reno-hero__image he-reno-hero__image--bottom"><img src="' + src(heroImages[2]) + '" alt="Home Empire renovation design"></div>',
       '  <div class="he-reno-hero__copy">',
       '    <p>' + t("eyebrow") + '</p>',
       '    <h1>' + t("title") + '</h1>',

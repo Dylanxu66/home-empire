@@ -91,26 +91,56 @@
 }
 
 #he-home-video-panel {
-  width: min(900px, calc(100vw - 32px));
-  aspect-ratio: 16 / 5.8;
-  margin: clamp(18px, 2.6vw, 30px) auto clamp(30px, 4vw, 54px);
-  overflow: hidden;
-  border: 1px solid rgba(255, 250, 240, .28);
-  border-radius: 0;
-  background: #082f28;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .34);
+  display: none !important;
 }
 
-#he-home-video-panel + * {
-  margin-top: clamp(18px, 2.8vw, 34px) !important;
+.he-home-stats-video-section {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden !important;
+  background:
+    linear-gradient(90deg, rgba(6, 45, 37, .94), rgba(6, 45, 37, .76)),
+    url("/images/hero-kl.png") center / cover no-repeat !important;
 }
 
-#he-home-video-panel video {
+.he-home-stats-video-section::before,
+.he-home-stats-video-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.he-home-stats-video-section::before {
+  background:
+    linear-gradient(90deg, rgba(5, 35, 30, .92), rgba(7, 54, 45, .7) 48%, rgba(5, 35, 30, .9)),
+    radial-gradient(circle at 50% 50%, rgba(203, 157, 70, .2), transparent 42%);
+}
+
+.he-home-stats-video-section::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .36));
+}
+
+#he-home-stats-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+#he-home-stats-video-bg video {
   display: block !important;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(.98) contrast(1.04);
+  opacity: .52;
+  filter: saturate(.95) contrast(1.08) brightness(.72);
+}
+
+.he-home-stats-video-section > *:not(#he-home-stats-video-bg) {
+  position: relative;
+  z-index: 1;
 }
 
 body:not(.he-renovation-page) .he-renovation-film,
@@ -207,8 +237,7 @@ body:not(.he-renovation-page) .he-design-gallery {
     background: #06372e !important;
   }
 
-  #he-home-video-panel {
-    aspect-ratio: 16 / 9;
-    width: min(92vw, 520px);
+  #he-home-stats-video-bg video {
+    opacity: .36;
   }
 }
