@@ -9,6 +9,35 @@
     57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67
   ];
   var lang = "zh";
+  var navCopy = {
+    zh: {
+      home: "首页",
+      services: "服务",
+      renovation: "装修方案",
+      spaces: "精选空间",
+      mm2h: "第二家园",
+      about: "关于我们",
+      contact: "联系"
+    },
+    en: {
+      home: "Home",
+      services: "Services",
+      renovation: "Renovation",
+      spaces: "Spaces",
+      mm2h: "MM2H",
+      about: "About",
+      contact: "Contact"
+    },
+    ms: {
+      home: "Utama",
+      services: "Servis",
+      renovation: "Renovasi",
+      spaces: "Ruang",
+      mm2h: "MM2H",
+      about: "Tentang",
+      contact: "Hubungi"
+    }
+  };
   var copy = {
     zh: {
       eyebrow: "HOME EMPIRE RENOVATION",
@@ -48,11 +77,23 @@
     return '<figure class="' + className + '"><img loading="lazy" decoding="async" src="' + src(index) + '" alt="Home Empire renovation design ' + index + '"></figure>';
   }
 
+  function updateShell() {
+    var labels = navCopy[lang] || navCopy.zh;
+    Object.keys(labels).forEach(function (key) {
+      var node = document.querySelector("[data-he-nav='" + key + "']");
+      if (node) node.textContent = labels[key];
+    });
+    document.querySelectorAll("[data-testid^='btn-lang-']").forEach(function (button) {
+      button.setAttribute("aria-pressed", getLang(button) === lang ? "true" : "false");
+    });
+    document.documentElement.lang = lang === "ms" ? "ms" : lang === "en" ? "en" : "zh";
+  }
+
   function render() {
     var main = document.querySelector("#root main") || document.querySelector("main");
     if (!main) return false;
     document.body.classList.add("he-renovation-page", "he-renovation-redesign");
-    document.documentElement.classList.remove("he-reno-boot");
+    updateShell();
 
     var heroImages = displayImages.slice(0, 3);
     var sliderImages = displayImages.slice(3, 16);
