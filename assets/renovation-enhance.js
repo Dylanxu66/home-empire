@@ -6,7 +6,11 @@
     1, 2, 3, 4, 5, 7, 9, 11, 13, 14, 15, 16, 17, 18, 20, 21, 22, 24,
     25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
     41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56,
-    57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67
+    57, 59, 60, 61, 62, 63, 64, 65, 66, 67
+  ];
+  var heroImages = [4, 2, 3];
+  var featuredImages = [
+    5, 13, 15, 16, 17, 20, 21, 22, 24, 25, 26, 30, 31, 32, 42, 43
   ];
   var lang = "zh";
   var navCopy = {
@@ -45,7 +49,9 @@
       intro: "真实空间、真实细节、真实交付。以下版面只展示 Home Empire 装修设计图片资料。",
       feature: "精选空间",
       gallery: "完整图库",
-      note: "每个房间的采光、比例、动线和软装氛围都不同，设计应当跟着空间本身走。"
+      note: "每个房间的采光、比例、动线和软装氛围都不同，设计应当跟着空间本身走。",
+      archive: "剩余图库",
+      archiveHint: "点击图标展开其余图片"
     },
     en: {
       eyebrow: "HOME EMPIRE RENOVATION",
@@ -53,7 +59,9 @@
       intro: "Real spaces, real details, real delivery. This page only showcases Home Empire renovation design images.",
       feature: "Featured Spaces",
       gallery: "Full Gallery",
-      note: "Every unit has its own light, scale, flow and styling mood. The design should follow the space itself."
+      note: "Every unit has its own light, scale, flow and styling mood. The design should follow the space itself.",
+      archive: "Remaining Gallery",
+      archiveHint: "Open the icon to view the rest"
     },
     ms: {
       eyebrow: "HOME EMPIRE RENOVATION",
@@ -61,7 +69,9 @@
       intro: "Ruang sebenar, butiran sebenar dan hasil sebenar. Halaman ini hanya memaparkan imej reka bentuk renovasi Home Empire.",
       feature: "Ruang Pilihan",
       gallery: "Galeri Penuh",
-      note: "Setiap unit mempunyai cahaya, skala, aliran dan suasana gaya yang tersendiri. Reka bentuk perlu mengikut ruang sebenar."
+      note: "Setiap unit mempunyai cahaya, skala, aliran dan suasana gaya yang tersendiri. Reka bentuk perlu mengikut ruang sebenar.",
+      archive: "Galeri Lain",
+      archiveHint: "Buka ikon untuk melihat selebihnya"
     }
   };
 
@@ -95,9 +105,13 @@
     document.body.classList.add("he-renovation-page", "he-renovation-redesign");
     updateShell();
 
-    var heroImages = displayImages.slice(0, 3);
-    var sliderImages = displayImages.slice(3, 16);
-    var galleryImages = displayImages.slice(16);
+    var visible = {};
+    heroImages.concat(featuredImages).forEach(function (index) {
+      visible[index] = true;
+    });
+    var galleryImages = displayImages.filter(function (index) {
+      return !visible[index];
+    });
 
     main.innerHTML = [
       '<section class="he-reno-hero">',
@@ -116,16 +130,20 @@
       '    <h2>' + t("note") + '</h2>',
       '  </div>',
       '  <div class="he-reno-slider__rail" aria-label="' + t("feature") + '">',
-      sliderImages.map(function (index) { return image(index, "he-reno-slider__item"); }).join(""),
+      featuredImages.map(function (index) { return image(index, "he-reno-slider__item"); }).join(""),
       '  </div>',
       '</section>',
-      '<section class="he-reno-gallery">',
-      '  <div class="he-reno-section-head he-reno-section-head--tight">',
-      '    <p>' + t("gallery") + '</p>',
-      '  </div>',
-      '  <div class="he-reno-gallery__grid">',
+      '<section class="he-reno-gallery he-reno-archive">',
+      '  <details>',
+      '    <summary class="he-reno-archive__toggle">',
+      '      <i aria-hidden="true"><span></span><span></span><span></span><span></span></i>',
+      '      <strong>' + t("archive") + '</strong>',
+      '      <small>' + t("archiveHint") + '</small>',
+      '    </summary>',
+      '    <div class="he-reno-gallery__grid">',
       galleryImages.map(function (index) { return image(index, "he-reno-gallery__item"); }).join(""),
-      '  </div>',
+      '    </div>',
+      '  </details>',
       '</section>'
     ].join("");
 
