@@ -1,6 +1,7 @@
 (function () {
   var renovationTerms = /RENOVATION FILM|RENOVATION PORTFOLIO|RENOVATION PACKAGE|装修方案做成|装修报价|FILEM RENOVASI|PORTFOLIO RENOVASI/i;
   var serviceTerms = /装修设计|装修方案|装修报价|Renovation|Renovasi/i;
+  var staticRenovationUrl = "/renovation/?v=20260617a";
   var currentLang = "zh";
   var legalCopy = {
     privacy: {
@@ -96,6 +97,24 @@
 
   function mainNode() {
     return document.querySelector("#root main") || document.querySelector("main");
+  }
+
+  function renovationHref(anchor) {
+    if (!anchor) return false;
+    var href = anchor.getAttribute("href") || "";
+    if (!href) return false;
+    try {
+      var url = new URL(href, window.location.origin);
+      return url.origin === window.location.origin && url.pathname.replace(/\/+$/, "") === "/renovation";
+    } catch (error) {
+      return /^\/renovation\/?/.test(href);
+    }
+  }
+
+  function forceStaticRenovation() {
+    if (!isRenovationPage()) return;
+    if (document.body && document.body.classList.contains("he-static-renovation")) return;
+    window.location.replace(staticRenovationUrl);
   }
 
   function polishLoader() {
@@ -225,6 +244,7 @@
   }
 
   function run() {
+    forceStaticRenovation();
     polishLoader();
     addHomeVideo();
     cleanRenovationFromOtherPages();
@@ -240,6 +260,14 @@
 
   new MutationObserver(run).observe(document.documentElement, { childList: true, subtree: true });
   document.addEventListener("click", function (event) {
+    var renovationLink = event.target.closest && event.target.closest("a[href]");
+    if (renovationHref(renovationLink) && !(document.body && document.body.classList.contains("he-static-renovation"))) {
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.assign(staticRenovationUrl);
+      return;
+    }
+
     var button = event.target.closest && event.target.closest("[data-testid^='btn-lang-']");
     if (!button) return;
     currentLang = getLang(button);
