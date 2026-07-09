@@ -12,7 +12,7 @@
   var featuredImages = [
     5, 13, 15, 16, 17, 20, 21, 22, 24, 25, 26, 30, 31, 32, 42, 43
   ];
-  var lang = "zh";
+  var lang = preferredLang();
   var navCopy = {
     zh: {
       home: "首页",
@@ -83,6 +83,20 @@
     return (copy[lang] || copy.zh)[key];
   }
 
+  function preferredLang() {
+    try {
+      return window.localStorage.getItem("hePreferredLang20260709") || "en";
+    } catch (error) {
+      return "en";
+    }
+  }
+
+  function savePreferredLang(nextLang) {
+    try {
+      window.localStorage.setItem("hePreferredLang20260709", nextLang);
+    } catch (error) {}
+  }
+
   function image(index, className) {
     return '<figure class="' + className + '"><img loading="lazy" decoding="async" src="' + src(index) + '" alt="Home Empire renovation design ' + index + '"></figure>';
   }
@@ -95,6 +109,10 @@
     });
     document.querySelectorAll("[data-testid^='btn-lang-']").forEach(function (button) {
       button.setAttribute("aria-pressed", getLang(button) === lang ? "true" : "false");
+    });
+    ["en", "zh", "ms"].forEach(function (key) {
+      var button = document.querySelector("[data-testid='btn-lang-" + key + "']");
+      if (button && button.parentElement) button.parentElement.appendChild(button);
     });
     document.documentElement.lang = lang === "ms" ? "ms" : lang === "en" ? "en" : "zh";
   }
@@ -167,6 +185,7 @@
     var button = event.target.closest && event.target.closest("[data-testid^='btn-lang-']");
     if (!button) return;
     lang = getLang(button);
+    savePreferredLang(lang);
     window.setTimeout(render, 120);
   });
 })();

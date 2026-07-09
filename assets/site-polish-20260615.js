@@ -1,8 +1,11 @@
 (function () {
   var renovationTerms = /RENOVATION FILM|RENOVATION PORTFOLIO|RENOVATION PACKAGE|装修方案做成|装修报价|FILEM RENOVASI|PORTFOLIO RENOVASI/i;
   var serviceTerms = /装修设计|装修方案|装修报价|Renovation|Renovasi/i;
-  var staticRenovationUrl = "/renovation/?v=20260617a";
-  var currentLang = "zh";
+  var staticRenovationUrl = "/renovation/?v=20260709a";
+  var defaultLang = "en";
+  var langStorageKey = "hePreferredLang20260709";
+  var langOrder = ["en", "zh", "ms"];
+  var currentLang = preferredLang();
   var legalCopy = {
     privacy: {
       zh: {
@@ -95,8 +98,59 @@
     return "zh";
   }
 
+  function preferredLang() {
+    try {
+      return window.localStorage.getItem(langStorageKey) || defaultLang;
+    } catch (error) {
+      return defaultLang;
+    }
+  }
+
+  function savePreferredLang(lang) {
+    try {
+      window.localStorage.setItem(langStorageKey, lang);
+    } catch (error) {}
+  }
+
   function mainNode() {
     return document.querySelector("#root main") || document.querySelector("main");
+  }
+
+  function languageButton(lang) {
+    var suffix = lang === "ms" ? "ms" : lang === "zh" ? "zh" : "en";
+    return document.querySelector("[data-testid='btn-lang-" + suffix + "']");
+  }
+
+  function reorderLanguageButtons() {
+    var buttons = langOrder.map(languageButton).filter(Boolean);
+    if (buttons.length < 2) return;
+    var parent = buttons[0].parentElement;
+    if (!parent) return;
+    var currentOrder = Array.prototype.slice.call(parent.querySelectorAll("[data-testid^='btn-lang-']")).map(getLang).join("|");
+    var targetOrder = langOrder.join("|");
+    if (currentOrder !== targetOrder) {
+      langOrder.forEach(function (lang) {
+        var button = languageButton(lang);
+        if (button && button.parentElement === parent) parent.appendChild(button);
+      });
+    }
+    if (!parent.classList.contains("he-lang-switcher")) parent.classList.add("he-lang-switcher");
+    if (document.body && !document.body.classList.contains("he-site-premium")) document.body.classList.add("he-site-premium");
+    document.documentElement.lang = currentLang === "ms" ? "ms" : currentLang === "zh" ? "zh" : "en";
+  }
+
+  function applyDefaultLanguage() {
+    reorderLanguageButtons();
+    if (document.body && document.body.classList.contains("he-static-renovation")) return;
+    var button = languageButton(currentLang);
+    if (!button) return;
+    var key = pathName() + ":" + currentLang;
+    if (document.documentElement.dataset.heLangApplied === key) return;
+    document.documentElement.dataset.heLangApplied = key;
+    window.setTimeout(function () {
+      var freshButton = languageButton(currentLang);
+      if (freshButton && freshButton.click) freshButton.click();
+    }, 80);
   }
 
   function renovationHref(anchor) {
@@ -245,6 +299,7 @@
 
   function run() {
     forceStaticRenovation();
+    applyDefaultLanguage();
     polishLoader();
     addHomeVideo();
     cleanRenovationFromOtherPages();
@@ -271,6 +326,8 @@
     var button = event.target.closest && event.target.closest("[data-testid^='btn-lang-']");
     if (!button) return;
     currentLang = getLang(button);
+    savePreferredLang(currentLang);
+    reorderLanguageButtons();
     window.setTimeout(rewriteLegalPage, 120);
   });
 })();
