@@ -1,7 +1,7 @@
 (function () {
   var renovationTerms = /RENOVATION FILM|RENOVATION PORTFOLIO|RENOVATION PACKAGE|装修方案做成|装修报价|FILEM RENOVASI|PORTFOLIO RENOVASI/i;
   var serviceTerms = /装修设计|装修方案|装修报价|Renovation|Renovasi/i;
-  var staticRenovationUrl = "/renovation/?v=20260709a";
+  var staticRenovationUrl = "/renovation/?v=20260709b";
   var defaultLang = "en";
   var langStorageKey = "hePreferredLang20260709";
   var langOrder = ["en", "zh", "ms"];
@@ -233,6 +233,40 @@
     statsSection.insertBefore(wrap, statsSection.firstChild);
   }
 
+  function polishHomeHeroLayout() {
+    if (!isHomePage()) return;
+    var main = mainNode();
+    var hero = main && main.querySelector("section");
+    if (!hero) return;
+
+    if (!hero.classList.contains("he-home-hero-polished")) hero.classList.add("he-home-hero-polished");
+
+    var title = hero.querySelector("h1");
+    if (title && !title.classList.contains("he-home-hero-title")) title.classList.add("he-home-hero-title");
+
+    var panels = Array.prototype.slice.call(hero.querySelectorAll("div"));
+    var matchesSearchCopy = function (node) {
+      var text = (node.innerText || "").replace(/\s+/g, " ");
+      return /LOCATION|CHECK-IN|Check-in|入住|Daftar Masuk/i.test(text) &&
+        /PRICE RANGE|Price Range|价格区间|Julat Harga/i.test(text) &&
+        /ROOM TYPE|Room Type|房型|Jenis Bilik/i.test(text);
+    };
+    var visiblePanels = panels.filter(function (node) {
+      if (!matchesSearchCopy(node)) return false;
+      var rect = node.getBoundingClientRect();
+      return rect.width > 40 && rect.height > 40;
+    });
+    var searchPanel = visiblePanels.find(function (node) {
+      return matchesSearchCopy(node) && /bg-white|backdrop-blur|shadow-2xl|rounded-2xl/.test(node.className || "");
+    }) || visiblePanels[0];
+
+    hero.querySelectorAll(".he-home-search-panel").forEach(function (node) {
+      if (node !== searchPanel) node.classList.remove("he-home-search-panel");
+    });
+
+    if (searchPanel && !searchPanel.classList.contains("he-home-search-panel")) searchPanel.classList.add("he-home-search-panel");
+  }
+
   function removeNode(node) {
     if (node && node.parentNode) node.parentNode.removeChild(node);
   }
@@ -302,6 +336,7 @@
     applyDefaultLanguage();
     polishLoader();
     addHomeVideo();
+    polishHomeHeroLayout();
     cleanRenovationFromOtherPages();
     rewriteLegalPage();
   }
