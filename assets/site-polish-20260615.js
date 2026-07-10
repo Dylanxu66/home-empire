@@ -1,7 +1,7 @@
 (function () {
   var renovationTerms = /RENOVATION FILM|RENOVATION PORTFOLIO|RENOVATION PACKAGE|装修方案做成|装修报价|FILEM RENOVASI|PORTFOLIO RENOVASI/i;
   var serviceTerms = /装修设计|装修方案|装修报价|Renovation|Renovasi/i;
-  var staticRenovationUrl = "/renovation/?v=20260709b";
+  var staticRenovationUrl = "/renovation/?v=20260710a";
   var defaultLang = "en";
   var langStorageKey = "hePreferredLang20260709";
   var langOrder = ["en", "zh", "ms"];
@@ -267,6 +267,47 @@
     if (searchPanel && !searchPanel.classList.contains("he-home-search-panel")) searchPanel.classList.add("he-home-search-panel");
   }
 
+  function localDatePlaceholder() {
+    if (currentLang === "ms") return "Pilih tarikh";
+    if (currentLang === "zh") return "选择日期";
+    return "Select date";
+  }
+
+  function syncDateInput(input) {
+    if (!input || input.dataset.heDateBound !== "true") {
+      input.dataset.heDateBound = "true";
+      input.addEventListener("focus", function () {
+        if (currentLang === "zh") return;
+        input.type = "date";
+        try {
+          if (input.showPicker) input.showPicker();
+        } catch (error) {}
+      });
+      input.addEventListener("blur", function () {
+        if (currentLang !== "zh") input.type = "text";
+      });
+      input.addEventListener("change", function () {
+        if (currentLang !== "zh") window.setTimeout(function () { input.type = "text"; }, 0);
+      });
+    }
+
+    input.lang = currentLang === "zh" ? "zh-CN" : currentLang === "ms" ? "ms-MY" : "en";
+    input.setAttribute("aria-label", localDatePlaceholder());
+
+    if (currentLang === "zh") {
+      input.type = "date";
+      input.removeAttribute("placeholder");
+      return;
+    }
+
+    input.type = "text";
+    input.placeholder = localDatePlaceholder();
+  }
+
+  function polishLocalizedControls() {
+    document.querySelectorAll("input[type='date'], input[data-he-date-bound='true']").forEach(syncDateInput);
+  }
+
   function removeNode(node) {
     if (node && node.parentNode) node.parentNode.removeChild(node);
   }
@@ -337,6 +378,7 @@
     polishLoader();
     addHomeVideo();
     polishHomeHeroLayout();
+    polishLocalizedControls();
     cleanRenovationFromOtherPages();
     rewriteLegalPage();
   }
@@ -363,6 +405,7 @@
     currentLang = getLang(button);
     savePreferredLang(currentLang);
     reorderLanguageButtons();
+    polishLocalizedControls();
     window.setTimeout(rewriteLegalPage, 120);
   });
 })();
